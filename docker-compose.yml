@@ -1,0 +1,24 @@
+services:
+  minio:
+    image: quay.io/minio/minio
+    container_name: minio
+    ports:
+      - "9000:9000"
+      - "9002:9001"
+    environment:
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: fadwa123@#
+    volumes:
+      - ./minio/data:/data
+    command: server /data --console-address ":9001"
+  # snowflake:
+  #   container_name: "localstack-main"
+  #   image: localstack/snowflake
+  #   ports:
+  #   - "127.0.0.1:4566:4566"
+  #   - "127.0.0.1:4510-4559:4510-4559"
+  #   - "127.0.0.1:443:443"
+  #   environment:
+  #     - LOCALSTACK_AUTH_TOKEN=${LOCALSTACK_AUTH_TOKEN:?}
+  #   volumes:
+  #     - "./volume:/var/lib/localstack"

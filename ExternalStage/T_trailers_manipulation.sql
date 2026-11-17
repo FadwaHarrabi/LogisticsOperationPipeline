@@ -1,0 +1,3 @@
+DESC TABLE TRAILERS;
+
+SELECT COUNT(DISTINCT trailer_id) from trailers;

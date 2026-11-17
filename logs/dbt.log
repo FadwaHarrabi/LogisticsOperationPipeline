@@ -1,0 +1,93 @@
+==================== 2026-11-14T20:24:31.993379Z | 01a1dbbb-abf7-7ac3-b6e4-fc1a97f89a93 ====================
+20:24:31.993533 [info ]: Installing dbt project and profile setup
+20:24:32.308027 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+20:24:32.309998 [info ]: Success Project created successfully!
+20:24:32.310239 [info ]: Info Project name: jaffle_shop
+20:24:32.310622 [info ]: Info Project directory: jaffle_shop
+20:24:32.310761 [info ]: Info Setting up your profile...
+20:24:32.311874 [info ]: Loading ~/.dbt/profiles.yml
+20:24:32.320067 [info ]: Info Creating new profile...
+20:24:43.671221 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+20:26:54.765827 [info ]: Success Profile written to C:\Users\user\.dbt\profiles.yml
+20:26:54.766030 [info ]: Validating profile inputs, adapters, and connection
+
+20:26:54.766144 [info ]: dbt-core 2.0.0-alpha.5
+20:26:54.766482 [info ]: Started loading project
+20:26:54.768114 [info ]: Loading ~/.dbt/profiles.yml
+20:26:54.792933 [info ]: Finished loading project [  0.03s]
+20:26:54.793209 [info ]: Started debugging
+20:26:54.793342 [info ]: Debugging profile: dev
+20:26:54.793525 [info ]: Debugging dbt version: 2.0.0-alpha.5
+20:26:54.793752 [info ]: Debugging platform: windows x86_64 (windows)
+20:26:54.793930 [info ]: Debugging adapter type: snowflake (remote)
+20:26:54.830396 [info ]: Debugging dependencies:
+  git: OK
+20:26:54.830719 [info ]: Debugging connection:
+  "account": "YT03768",
+  "user": "FADWAHARRABI58@GMAIL.COM",
+  "database": "logistics",
+  "warehouse": "dbt_wh",
+  "schema": "logistics",
+  "role": "dbt_role"
+20:27:05.696339 [info ]: Finished debugging [ 10.90s]
+20:27:05.697371 [error]: [AuthenticationFailed (dbt1011)]: dbt was unable to connect to the specified database.
+The following error was returned:
+
+[Snowflake] 261004 (08004): failed to auth for unknown reason. HTTP: 404, URL: https://YT03768.snowflakecomputing.com:443/session/v1/login-request?databaseName=logistics&requestId=69c024ea-9634-4820-6d62-c83b4acde6b3&request_guid=7c6f1445-c9e5-4b10-668d-a34825b82944&roleName=dbt_role&schemaName=logistics&warehouse=dbt_wh
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/core/connect-data-platform/connection-profiles
+20:27:05.900622 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error for target 'dev' [2m 34s]
+==================== 2026-11-14T20:27:50.428273Z | 01a1dbbe-b31a-7c83-9e0b-405779f4d8fe ====================
+20:27:50.428443 [info ]: Installing dbt project and profile setup
+20:27:50.432377 [info ]: Warning Directory 'jaffle_shop' already exists, using 'jaffle_shop_1' instead
+20:27:50.449269 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+20:27:50.449541 [info ]: Success Project created successfully!
+20:27:50.449683 [info ]: Info Project name: jaffle_shop_1
+20:27:50.449817 [info ]: Info Project directory: jaffle_shop_1
+20:27:50.449921 [info ]: Info Setting up your profile...
+20:27:50.450379 [info ]: Loading ~/.dbt/profiles.yml
+20:27:50.451028 [info ]: Info Creating new profile...
+20:27:51.613363 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+==================== 2026-11-14T20:29:39.271768Z | 01a1dbc0-5c45-7091-93b6-0099b5c7ac1f ====================
+20:29:39.271963 [info ]: Installing dbt project and profile setup
+20:29:39.275321 [info ]: Warning Directory 'jaffle_shop' already exists, using 'jaffle_shop_2' instead
+20:29:39.288827 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+20:29:39.289044 [info ]: Success Project created successfully!
+20:29:39.289138 [info ]: Info Project name: jaffle_shop_2
+20:29:39.289226 [info ]: Info Project directory: jaffle_shop_2
+20:29:39.289338 [info ]: Info Setting up your profile...
+20:29:39.289766 [info ]: Loading ~/.dbt/profiles.yml
+20:29:39.290278 [info ]: Info Creating new profile...
+20:29:40.478949 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+20:30:07.567881 [info ]: Success Profile written to C:\Users\user\.dbt\profiles.yml
+20:30:07.568085 [info ]: Validating profile inputs, adapters, and connection
+
+20:30:07.568196 [info ]: dbt-core 2.0.0-alpha.5
+20:30:07.568465 [info ]: Started loading project
+20:30:07.569571 [info ]: Loading ~/.dbt/profiles.yml
+20:30:07.593236 [info ]: Finished loading project [  0.02s]
+20:30:07.593659 [info ]: Started debugging
+20:30:07.593788 [info ]: Debugging profile: dev
+20:30:07.593963 [info ]: Debugging dbt version: 2.0.0-alpha.5
+20:30:07.594186 [info ]: Debugging platform: windows x86_64 (windows)
+20:30:07.594415 [info ]: Debugging adapter type: snowflake (remote)
+20:30:07.639665 [info ]: Debugging dependencies:
+  git: OK
+20:30:07.639980 [info ]: Debugging connection:
+  "account": "LRLFURK-YT03768",
+  "user": "dbt_user",
+  "database": "logistics",
+  "warehouse": "dbt_wh",
+  "schema": "logistics",
+  "role": "dbt_role"
+20:30:12.863203 [debug]: Query executed on node unknown:
+select 1 as id
+20:30:12.863602 [info ]: Debugging connection test: OK
+20:30:12.864097 [info ]: Debugged All checks passed!
+20:30:12.864438 [info ]: Finished debugging [  5.27s]
+20:30:13.178466 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' successfully for target 'dev' [33.9s]

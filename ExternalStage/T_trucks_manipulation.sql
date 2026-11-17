@@ -1,0 +1,8 @@
+SELECT * FROM trucks;
+
+DESC TABLE trucks;
+
+SELECT STATUS AS city, COUNT(*) AS trucks
+FROM TRUCKS
+GROUP BY STATUS
+ORDER BY trucks DESC;
