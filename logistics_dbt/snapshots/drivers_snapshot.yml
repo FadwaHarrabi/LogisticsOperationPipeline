@@ -1,0 +1,22 @@
+snapshots:
+  - name: drivers
+    relation: source('logistics', 'drivers')
+    config:
+      schema: snapshots
+      strategy: check
+      unique_key: driver_id
+      check_cols:
+        - first_name
+        - last_name
+        - termination_date
+        - license_number
+        - license_state
+        - home_terminal
+        - employment_status
+        - cdl_class
+        - years_experience
+      dbt_valid_to_current: "to_date('9999-12-31')"
+      hard_deletes: invalidate
+      snapshot_meta_column_names:
+        dbt_valid_from: start_date
+        dbt_valid_to: end_date

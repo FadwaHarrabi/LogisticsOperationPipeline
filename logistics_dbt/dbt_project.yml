@@ -5,6 +5,8 @@ profile: logistics_dbt
 seed-paths: ["seeds"]
 model-paths: ["models"]
 macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+test-paths: ["test"]
 clean-targets:
   - "target"
   - "dbt_packages"
@@ -14,11 +16,18 @@ seeds:
   logistics_dbt:
     +schema: raw
 
+snapshots:
+  # Builds snapshots into '<your_schema_name>_snapshots'
+  logistics_dbt:
+    +schema: snapshots
+
 models:
   logistics_dbt:
     +static_analysis: strict
     # Materialize staging models as views, and marts as tables
     staging:
       +materialized: table
+      +schema: analytics
     marts:
       +materialized: table
+      +schema: analytics

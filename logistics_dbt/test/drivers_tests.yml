@@ -1,0 +1,68 @@
+version: 2
+
+models:
+  - name: stg_drivers
+    description: "This model is a staging model for the drivers table. It is used to clean and transform the data from the source table into a format that can be used by the marts."
+    columns:
+      - name: driver_id
+        description: "The unique identifier for the driver."
+        tests:
+          - not_null
+          - unique
+
+      - name: first_name
+        description: "The first name of the driver."
+        tests:
+          - not_null
+
+      - name: last_name
+        description: "The last name of the driver."
+        tests:
+          - not_null
+
+      - name: hire_date
+        description: "The date the driver was hired."
+        tests:
+          - not_null
+
+      - name: termination_date
+        description: "The date the driver was terminated."
+        # not_null removed: active drivers have no termination date
+
+      - name: license_number
+        description: "The license number of the driver."
+        tests:
+          - not_null
+
+      - name: license_state
+        description: "The state where the driver's license is issued."
+        tests:
+          - not_null
+
+      - name: date_of_birth
+        description: "The date of birth of the driver."
+        tests:
+          - not_null
+
+      - name: home_terminal
+        description: "The home terminal of the driver."
+        tests:
+          - not_null
+
+      - name: employment_status
+        description: "The employment status of the driver."
+        tests:
+          - not_null
+          - accepted_values: 
+              arguments:
+                  values: ["Active", "Terminated"]
+
+      - name: cdl_class
+        description: "The CDL class of the driver."
+        tests:
+          - not_null
+
+      - name: years_experience
+        description: "The number of years of experience the driver has."
+        tests:
+          - not_null
