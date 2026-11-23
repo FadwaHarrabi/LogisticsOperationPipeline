@@ -1,0 +1,43 @@
+version: 2
+models:
+  - name: stg_customers
+    description: "This model is a staging model for the customers table. It is used to clean and transform the data from the source table into a format that can be used by the marts."
+    columns:
+      - name: customer_id
+        description: "The unique identifier for the customer."
+        tests:
+          - not_null
+          - unique
+      - name: customer_name
+        description: "The name of the customer."
+        tests:
+          - not_null
+      - name: contract_type
+        description: "The type of contract the customer has with the company."
+        tests:
+          - not_null
+          - accepted_values:
+             arguments:
+               values: ['Dedicated', 'Contract', 'Spot']
+      - name: account_status
+        description: "The status of the customer's account."
+        tests:
+          - not_null
+         
+      - name : city
+        description: "The city where the customer is located."
+        tests:
+          - not_null
+      - name : state
+        description: "The state where the customer is located."
+        tests:
+          - not_null
+      - name: onboarding_date
+        description: "The date the customer was onboarded."
+        tests:
+          - not_null
+      - name: annual_revenue_potential
+        description: "The potential annual revenue from the customer."
+        tests:
+          - not_null
+          

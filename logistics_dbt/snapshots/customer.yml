@@ -1,0 +1,19 @@
+snapshots:
+    - name: customers
+      relation: source('logistics', 'customers')
+      config:
+        schema: snapshots
+        strategy: check
+        unique_key: customer_id
+        check_cols:
+          -customer_name
+          -contract_type
+          -account_status
+          -city
+          -state
+          -annual_revenue_potential
+        dbt_valid_to_current: "to_date('9999-12-31')"
+        hard_deletes: invalidate
+        snapshot_meta_column_names:
+          dbt_valid_from: start_date
+          dbt_valid_to: end_date

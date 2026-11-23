@@ -1,0 +1,22 @@
+snapshots:
+    - name: trailers
+      relation: source('logistics', 'trailers')
+      config:
+        schema: snapshots
+        strategy: check
+        unique_key: trailer_id
+        check_cols:
+          -trailer_number
+          -trailer_type
+          -length_feet
+          -model_year
+          -vin
+          -acquisition_date
+          -status
+          -current_location 
+          
+        dbt_valid_to_current: "to_date('9999-12-31')"
+        hard_deletes: invalidate
+        snapshot_meta_column_names:
+          dbt_valid_from: start_date
+          dbt_valid_to: end_date
