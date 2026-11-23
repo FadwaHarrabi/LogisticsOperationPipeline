@@ -2,7 +2,7 @@
 
 SELECT 
     CAST(trailer_id AS VARCHAR(255)) AS trailer_id,
-    CAST(trailer_number AS VARCHAR(255)) AS trailer_number,
+    CAST(trailer_number AS INTEGER) AS trailer_number,
     CAST(trailer_type AS VARCHAR(255)) AS trailer_type,
     length_feet,
     CAST(model_year AS INTEGER) AS model_year,

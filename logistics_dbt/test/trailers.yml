@@ -1,0 +1,57 @@
+version: 2
+models:
+  - name: stg_trailers
+    description: "This model is a staging model for the trailers table. It is used to clean and transform the data from the source table into a format that can be used by the marts."
+    columns:
+      - name: trailer_id
+        description: "The unique identifier for the trailer."
+        tests:
+          - not_null
+          - unique
+      - name: trailer_number
+        description: "The number assigned to the trailer."
+        tests:
+          - not_null
+      - name: trailer_type
+        description: "The type of the trailer."
+        tests:
+          - not_null
+          - accepted_values :
+              arguments:
+                values: ['Refrigerated', 'Dry Van']
+      - name: length_feet
+        description: "The length of the trailer in feet."
+        tests:
+          - not_null
+      - name: model_year  
+        description: "The model year of the trailer."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 2015
+                max_value: 2024
+                inclusive: true
+      - name: vin
+        description: "The Vehicle Identification Number (VIN) of the trailer."
+        tests:
+          - not_null
+          - unique
+      - name: acquisition_date
+        description: "The date when the trailer was acquired."
+        tests:
+          - not_null
+      - name: status
+        description: "The current status of the trailer."
+        tests:
+          - not_null
+          - accepted_values :
+              arguments:
+                values: ['Active']
+      - name: current_location
+        description: "The current location of the trailer."
+        tests:
+          - not_null
+      
+
+        
