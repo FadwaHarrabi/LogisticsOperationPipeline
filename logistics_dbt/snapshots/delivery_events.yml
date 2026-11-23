@@ -1,0 +1,24 @@
+snapshots:
+   - name: delivery_events
+     relation: source('logistics', 'delivery_events')
+     config:
+       schema: snapshots
+       strategy: check
+       unique_key: event_id
+       check_cols:
+         -load_id
+         -trip_id
+         -event_type
+         -facility_id
+         -scheduled_time
+         -actual_time
+         -detention_minutes
+         -on_time_flag
+         -location_city
+         -location_state
+         
+       dbt_valid_to_current: "to_date('9999-12-31')"
+       hard_deletes: invalidate
+       snapshot_meta_column_names:
+         dbt_valid_from: start_date
+         dbt_valid_to: end_date

@@ -1,0 +1,25 @@
+snapshots: 
+     - name: trips
+       relation: source('logistics', 'trips')
+       config:
+         schema: snapshots
+         strategy: check
+         unique_key: trip_id
+         check_cols:
+           -load_id
+           -driver_id
+           -truck_id
+           -trailer_id
+           -dispatch_date
+           -actual_distance_miles
+           -actual_duration_hours
+           -fuel_gallons_used
+           -average_mpg
+           -idle_time_hours
+           -trip_status
+
+         dbt_valid_to_current: "to_date('9999-12-31')"
+         hard_deletes: invalidate
+         snapshot_meta_column_names:
+           dbt_valid_from: start_date
+           dbt_valid_to: end_date

@@ -1,0 +1,25 @@
+snapshots:
+   - name: maintenance_records
+     relation: source('logistics', 'maintenance_records')
+     config:
+        schema: snapshots
+        strategy: check
+        unique_key: maintenance_id
+        check_cols:
+          -truck_id
+          -maintenance_date
+          -maintenance_type
+          -odometer_reading
+          -labor_hours
+          -labor_cost
+          -parts_cost
+          -total_cost
+          -facility_location
+          -downtime_hours
+          -service_description
+          
+        dbt_valid_to_current: "to_date('9999-12-31')"
+        hard_deletes: invalidate
+        snapshot_meta_column_names:
+          dbt_valid_from: start_date
+          dbt_valid_to: end_date

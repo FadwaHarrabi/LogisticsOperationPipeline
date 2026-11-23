@@ -1,0 +1,29 @@
+snapshots:
+   - name: safety_incidents
+     relation: source('logistics', 'safety_incidents')
+     config:
+        schema: snapshots
+        strategy: check
+        unique_key: incident_id
+        check_cols:
+          -truck_id
+          -trip_id
+          -driver_id
+          -incident_date
+          -incident_type
+          -location_city
+          -location_state
+          -at_fault_flag
+          -injury_flag
+          -vehicle_damage_cost
+          -cargo_damage_cost
+          -claim_amount
+          -preventable_flag
+          -description
+
+          
+        dbt_valid_to_current: "to_date('9999-12-31')"
+        hard_deletes: invalidate
+        snapshot_meta_column_names:
+          dbt_valid_from: start_date
+          dbt_valid_to: end_date

@@ -1,0 +1,25 @@
+snapshots:
+    - name: fuel
+      relation: source('logistics', 'fuel_purchases')
+      config:
+        schema: snapshots
+        strategy: check
+        unique_key: fuel_purchase_id
+        check_cols:
+          -trip_id
+          -truck_id
+          -driver_id
+          -purchase_date
+          -location_city
+          -location_state
+          -gallons
+          -price_per_gallon
+          -total_cost
+          -fuel_card_number
+
+          
+        dbt_valid_to_current: "to_date('9999-12-31')"
+        hard_deletes: invalidate
+        snapshot_meta_column_names:
+          dbt_valid_from: start_date
+          dbt_valid_to: end_date
