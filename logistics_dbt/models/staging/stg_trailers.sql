@@ -1,4 +1,4 @@
-{{ config(materialized='table',pre_hook="TRUNCATE TABLE IF EXISTS {{this}}") }}
+{{ config(materialized='table') }}
 
 SELECT 
     CAST(trailer_id AS VARCHAR(255)) AS trailer_id,
