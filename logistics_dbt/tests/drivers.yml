@@ -6,23 +6,23 @@ models:
     columns:
       - name: driver_id
         description: "The unique identifier for the driver."
-        tests:
+        data_tests:
           - not_null
           - unique
 
       - name: first_name
         description: "The first name of the driver."
-        tests:
+        data_tests:
           - not_null
 
       - name: last_name
         description: "The last name of the driver."
-        tests:
+        data_tests:
           - not_null
 
       - name: hire_date
         description: "The date the driver was hired."
-        tests:
+        data_tests:
           - not_null
 
       - name: termination_date
@@ -31,27 +31,27 @@ models:
 
       - name: license_number
         description: "The license number of the driver."
-        tests:
+        data_tests:
           - not_null
 
       - name: license_state
         description: "The state where the driver's license is issued."
-        tests:
+        data_tests:
           - not_null
 
       - name: date_of_birth
         description: "The date of birth of the driver."
-        tests:
+        data_tests:
           - not_null
 
       - name: home_terminal
         description: "The home terminal of the driver."
-        tests:
+        data_tests:
           - not_null
 
       - name: employment_status
         description: "The employment status of the driver."
-        tests:
+        data_tests:
           - not_null
           - accepted_values: 
               arguments:
@@ -59,10 +59,10 @@ models:
 
       - name: cdl_class
         description: "The CDL class of the driver."
-        tests:
+        data_tests:
           - not_null
 
       - name: years_experience
         description: "The number of years of experience the driver has."
-        tests:
+        data_tests:
           - not_null

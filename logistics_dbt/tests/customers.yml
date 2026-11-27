@@ -5,39 +5,39 @@ models:
     columns:
       - name: customer_id
         description: "The unique identifier for the customer."
-        tests:
+        data_tests:
           - not_null
           - unique
       - name: customer_name
         description: "The name of the customer."
-        tests:
+        data_tests:
           - not_null
       - name: contract_type
         description: "The type of contract the customer has with the company."
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
              arguments:
                values: ['Dedicated', 'Contract', 'Spot']
       - name: account_status
         description: "The status of the customer's account."
-        tests:
+        data_tests:
           - not_null
          
       - name : city
         description: "The city where the customer is located."
-        tests:
+        data_tests:
           - not_null
       - name : state
         description: "The state where the customer is located."
-        tests:
+        data_tests:
           - not_null
       - name: onboarding_date
         description: "The date the customer was onboarded."
-        tests:
+        data_tests:
           - not_null
       - name: annual_revenue_potential
         description: "The potential annual revenue from the customer."
-        tests:
+        data_tests:
           - not_null
           

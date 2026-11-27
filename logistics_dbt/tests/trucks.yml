@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_trucks
+    data_tests:
+      - not_null_custom:
+          arguments:
+            columns: [truck_id, unit_number, make, model_year, vin, acquisition_date, acquisition_mileage, fuel_type, tank_capacity_gallons, status, home_terminal]
+    columns:
+      - name: truck_id
+        data_tests:
+          - unique
+
+      - name: model_year
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 2015
+                max_value: 2021
+                inclusive: true
+
+      - name: status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["Active", "Maintenance", "Inactive"]

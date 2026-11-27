@@ -1,0 +1,16 @@
+version: 2
+models:
+   - name : stg_trips
+     data_tests:
+       - not_null_custom:
+          arguments:
+            columns: [trip_id,dispatch_date,actual_distance_miles,actual_duration_hours,fuel_gallons_used,average_mpg,idle_time_hours,trip_status]
+     columns:
+       - name: trip_id
+         data_tests :
+             - unique
+       - name: trip_status
+         data_tests:
+             - accepted_values:
+                arguments:
+                  values: [Completed]

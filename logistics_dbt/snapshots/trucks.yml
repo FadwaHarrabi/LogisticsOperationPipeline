@@ -6,11 +6,12 @@ snapshots:
         strategy: check
         unique_key: truck_id
         check_cols:
-          -acquisition_cost
-          -fuel_type
-          -tank_capacity_gallons
-          -status 
-          
+          - acquisition_cost
+          - fuel_type
+          - tank_capacity_gallons
+          - status
+          - home_terminal
+          - acquisition_mileage
         dbt_valid_to_current: "to_date('9999-12-31')"
         hard_deletes: invalidate
         snapshot_meta_column_names:

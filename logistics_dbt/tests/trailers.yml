@@ -5,27 +5,27 @@ models:
     columns:
       - name: trailer_id
         description: "The unique identifier for the trailer."
-        tests:
+        data_tests:
           - not_null
           - unique
       - name: trailer_number
         description: "The number assigned to the trailer."
-        tests:
+        data_tests:
           - not_null
       - name: trailer_type
         description: "The type of the trailer."
-        tests:
+        data_tests:
           - not_null
           - accepted_values :
               arguments:
                 values: ['Refrigerated', 'Dry Van']
       - name: length_feet
         description: "The length of the trailer in feet."
-        tests:
+        data_tests:
           - not_null
       - name: model_year  
         description: "The model year of the trailer."
-        tests:
+        data_tests:
           - not_null
           - dbt_utils.accepted_range:
               arguments:
@@ -34,23 +34,23 @@ models:
                 inclusive: true
       - name: vin
         description: "The Vehicle Identification Number (VIN) of the trailer."
-        tests:
+        data_tests:
           - not_null
           - unique
       - name: acquisition_date
         description: "The date when the trailer was acquired."
-        tests:
+        data_tests:
           - not_null
       - name: status
         description: "The current status of the trailer."
-        tests:
+        data_tests:
           - not_null
           - accepted_values :
               arguments:
                 values: ['Active']
       - name: current_location
         description: "The current location of the trailer."
-        tests:
+        data_tests:
           - not_null
       
 
