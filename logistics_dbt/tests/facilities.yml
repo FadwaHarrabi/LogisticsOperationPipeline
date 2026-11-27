@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_facilities
+    data_tests:
+      - not_null_custom:
+          arguments:
+            columns: [facility_id,facility_name,facility_type,city,state,latitude,longitude,dock_doors,capacity]
+    columns:
+      - name: facility_id
+        data_tests: 
+          - unique

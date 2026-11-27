@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_maintenance_records
+    data_tests:
+      - not_null_custom:
+          arguments:
+            columns: [maintenance_id,maintenance_date,maintenance_type,odometer_reading,labor_hours,labor_cost,parts_cost,total_cost,facility_location,downtime_hours,service_description]
+    columns:
+      - name: maintenance_id
+        data_tests: 
+          - unique

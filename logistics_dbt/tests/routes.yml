@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_routes
+    data_tests:
+      - not_null_custom:
+          arguments:
+            columns: [route_id,origin_city,origin_state,destination_city,destination_state,distance_miles,typical_transit_days,base_rate_per_mile,fuel_surcharge_rate]
+    columns:
+      - name: route_id
+        data_tests: 
+          - unique

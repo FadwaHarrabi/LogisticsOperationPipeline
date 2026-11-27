@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_delivery_events
+    data_tests:
+      - not_null_custom:
+          arguments:
+            columns: [event_id, event_type,scheduled_datetime,actual_datetime,detention_minutes,on_time_flag,location_city,location_state]
+    columns:
+      - name : event_id
+        data_tests: 
+          - unique

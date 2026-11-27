@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_fuel_purchases
+    data_tests:
+      - not_null_custom:
+          arguments:
+            columns: [fuel_purchase_id,purchase_date,location_city,location_state,gallons,price_per_gallon,total_cost,fuel_card_number]
+    columns:
+      - name: fuel_purchase_id
+        data_tests: 
+          - unique

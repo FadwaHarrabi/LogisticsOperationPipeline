@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_safety_incidents
+    data_tests:
+      - not_null_custom:
+          arguments:
+            columns: [incident_id,incident_date,incident_type,location_city,location_state,at_fault_flag,injury_flag,vehicle_damage_cost,cargo_damage_cost,claim_amount,preventable_flag,description]
+    columns:
+      - name: incident_id
+        data_tests: 
+          - unique
